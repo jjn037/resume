@@ -41,18 +41,17 @@
         * 4个目标域数据分布跨度极大
     * 个人工作：
         * 前期调研
-        * 提出并实现transductive和instance classification
-        * 撰写《A Transductive Multi-Head Model for Cross Domain Few-Shot Learning》- arxiv
-相结合的方法
+        * 提出并实现transductive和instance classification相结合的方法
+        * 撰写《A Transductive Multi-Head Model for Cross Domain Few-Shot Learning》- (https://arxiv.org/abs/2006.11384)
+
 4. AI-Lab - 论文 - 合作 - 2020/10-2020/12
-    * 《Multi-view Correlation based Black-box Adversarial Attack for 3D Object Detection》- KDD2021
+    * 《Multi-view Correlation based Black-box Adversarial Attack for 3D Object Detection》- KDD2021(https://doi.org/10.1145/3447548.3467432)
     * contribution：
         * 第一个基于camera和lidia传感器的3D目标检测
 对抗攻击工作
         * 提出多个融合images和point cloud的生成器用
 于生成攻击样本
-        * 在KITTI 3D目标检测数据集上进行大量实验，
-并证明我们的方法性能要远远超过单支
+        * 在KITTI 3D目标检测数据集上进行大量实验，并证明我们的方法性能要远远超过单支
 (images攻击或point cloud攻击)方法
     * 个人工作：负责idea代码实现，论文画图，可视化相关工作
 5. AI-Lab - 网约车新用户打车预测 - 单独负责 - 2020/04 - 2020/07
@@ -60,13 +59,13 @@
         * 使用有完整特征的活跃用户作为源域 
         * 使用不完整特征新用户数据作为目标域 
         * 创建迁移学习模型预测新用户在未来七天使用网约车服务的概率
-    * 技术方案：提出建IDIAN算法
+    * 技术方案：提出IDIAN算法
     * 项目难点与解决方案：
         * 源域与目标域数据特征空间不同：1.分别构建特征生成器对齐特征维度与空间 2.构建自编码机减少特征损失
         * 目标域数据缺失与源域域间差异大：1.使用缺失mask与随机噪声设置预估生成器生成特征缺失部分的预估值 2.使用Adversarial Domain Adaptation对齐源域与目标域的特征
     * 项目成果： 
         * 预测准确率超过目前已经公开的模型，F1 score较基准提高3.8%。
-        * 撰写论文《Domain Adaptation with Incomplete Target Domain》- arxiv
+        * 撰写论文《Domain Adaptation with Incomplete Target Domain》- (https://arxiv.org/abs/2012.01606)
 6. 营业执照目标检测与识别 - 实习 -2018
     * 使用Faster RCNN 检测营业执照字段，并使用CRNN识别字段内容
 7. 钢轨扣件检测 - 学校项目 - 2017
