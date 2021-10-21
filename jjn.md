@@ -11,7 +11,7 @@
 ## 工作及教育经历
 
 
-* 嘀嘀&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;2019.8~至今&emsp;&emsp;&emsp;&emsp;&emsp; Voyager-Autonomy       
+* 嘀嘀&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;2019.9~至今&emsp;&emsp;&emsp;&emsp;&emsp; Voyager-Autonomy       
 * 北京邮电大学&emsp;&emsp;&emsp;&emsp;&emsp;2016.9~2019.7&emsp;&emsp;&emsp;&emsp; 自动化-研究生         
 * 青岛理工大学&emsp;&emsp;&emsp;&emsp;&emsp;2011.9~2015.7&emsp;&emsp;&emsp;&emsp; 自动化-本科  
 
@@ -20,13 +20,14 @@
 
 1. Voyager - V2X 检测追踪算法开发与部署 - 独立开发 - 2020/11 - 至今 
     * 具体功能：高点相机目标检测与追踪，输出目标位置信息，配合车端感知
-    * 技术方案：使用YOLOV5开发目标检测算法，DeepSORT作为目标追踪算法，在服务器上使用Pytorch训练YOLOV5模型，并使用Tensorrt框架在Xavier上部署检测与追踪算法。使用YOLOX更新目标检测算法。
+    * 技术方案：编写自动化脚本，自动采集、上传数据，自动解码标注数据并加入到训练集中；使用YOLOV5开发目标检测算法，DeepSORT作为目标追踪算法，在服务器上使用Pytorch训练YOLOV5模型，并使用Tensorrt框架在Xavier上部署检测与追踪算法。使用YOLOX更新目标检测算法。
     * 项目难点与解决方案：
-        * 数据集类别不平衡：引入AP Loss，改善数据类别不平衡带来的问题
-        * 部分类别错检、误检严重：1. 修改DeepSORT追踪器，使当前帧的分类与之前帧匹配的目标分类结果结合，在不增加计算量
-的同时减缓误检问题 2. 误检图片作为background图片加入训练
+        * 数据集类别不平衡：引入Weighted Cross Entropy Losses，改善数据类别不平衡带来的问题
+        * 部分类别错检、误检严重：1. 修改DeepSORT追踪器，使当前帧的分类与之前帧匹配的目标分类结果结合，在不增加计算量的同时减缓误检问题 2. 误检图片作为background图片加入训练
         * 原开发框架用pytorch，修改模型后需要同时修改tensorrt代码线上部署代码，开发不够灵活：构建pytorch-onnx-tensorrt代码，训练模型修改后不需要重构tensorrt代码
-        * 成果：算法满足服务性能要求，并部署到线上
+        * 重构YOLOV5 backbone, 将原有的3×3conv替换成Repvgg Block, 在不增加计算量的同时进一步提高模型准确率
+        * 在YOLOV5分支增加heading朝向预测
+    * 成果：算法满足服务性能要求，并部署到线上
 2. Voyager - 鱼眼相机标定 - 独立负责 - 202103- 202106
     * 具体功能：对不同型号鱼眼相机进行内参与外参标定
     * 技术方案：采集部分相机标定板图片，使用Mei模型标定相机内参，对缺失标定板图片的相机使用同批次相机标定板图片进行标定
@@ -68,11 +69,6 @@
         * 撰写论文《Domain Adaptation with Incomplete Target Domain》- (https://arxiv.org/abs/2012.01606)
 6. 营业执照目标检测与识别 - 实习 -2018
     * 使用Faster RCNN 检测营业执照字段，并使用CRNN识别字段内容
-7. 钢轨扣件检测 - 学校项目 - 2017
-    * 使用 Faster RCNN检测钢轨扣件
-8. 微信公众号爬虫 - 2016
-    * 客户输入关键字，使用python爬取微信公众号相关内容，并使用使用Django可视化展示，并用Booststrap美化前端。
-
 
 
 ## 专业技能
@@ -81,11 +77,3 @@
 * 掌握基础数据结构和算法的基本原理
 * 熟悉迁移学习领域和小样本学习领域基础算法
 * 熟悉ResNet、VGG等主流分类模型，熟悉YOLO、FasterRCNN等检测模型
-
-
-## 其他信息 
-* 喜欢骑车 等等
-* 性格开朗 等等 
-
-
-
